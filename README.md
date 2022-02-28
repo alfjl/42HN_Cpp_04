@@ -21,7 +21,7 @@ Fix the Animal class so nobody can instantiate it.
 
 ex03:  
 Write AMateria class, and its 2 concrete classes Ice & Cure. Create concrete class Character, which can equip and unequip Ice & Cure objects. Also write a MateriaSource class, which is able to learn new AMateria 'templates' if needed.
-(first use of 'interfaces' (since we use Cci++98, we use 'pure abstract classes')
+(first use of 'interfaces' (since we use CC++98, we use 'pure abstract classes')
 
 ## Learnings
 
@@ -30,4 +30,4 @@ Again, a good refresher to the given topics, with the typical '42 twist'.
 ### Resources
 
 * [cplusplus.com](http://www.cplusplus.com/)
-
+* [Virtual/pure virtual functions & abstract classes](https://www.youtube.com/watch?v=T8f4ajtFU9g)
