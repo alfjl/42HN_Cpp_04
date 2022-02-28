@@ -31,3 +31,4 @@ Again, a good refresher to the given topics, with the typical '42 twist'.
 
 * [cplusplus.com](http://www.cplusplus.com/)
 * [Virtual/pure virtual functions & abstract classes](https://www.youtube.com/watch?v=T8f4ajtFU9g)
+* [Deep vs shallow copy](https://www.learncpp.com/cpp-tutorial/shallow-vs-deep-copying/)
