@@ -57,7 +57,7 @@ int main()
             arrayCats[i] = new Cat();
     arrayCats[5]->setIdea("my idea #5");
     std::cout << "before copy = arrayCats[5] '" << arrayCats[5]->getType() << "' ideas: " << arrayCats[5]->getBrain()->_ideas[0] << std::endl;
-    std::cout << "before copy = arrayAnimals[3] '" << arrayCats[3]->getType() << "' ideas: " << arrayCats[3]->getBrain()->_ideas[0] << std::endl;
+    std::cout << "before copy = arrayCats[3] '" << arrayCats[3]->getType() << "' ideas: " << arrayCats[3]->getBrain()->_ideas[0] << std::endl;
     
     (*arrayCats[3]) = (*arrayCats[5]);
 
