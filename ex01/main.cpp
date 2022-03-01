@@ -38,14 +38,14 @@ int main()
             arrayAnimals[i] = new Cat();
     }
     std::cout << "\n##### DEEP COPY PROOF ANIMAL #####" << std::endl;
-    arrayAnimals[5]->setIdea("my idea #5");
-    std::cout << "before copy = arrayAnimals[5] '" << arrayAnimals[5]->getType() << "' ideas: " << arrayAnimals[5]->getBrain()->_ideas[0] << std::endl;
-    std::cout << "before copy = arrayAnimals[3] '" << arrayAnimals[3]->getType() << "' ideas: " << arrayAnimals[3]->getBrain()->_ideas[0] << std::endl;
+    arrayAnimals[4]->setIdea("my idea #4");
+    std::cout << "before copy = arrayAnimals[4] '" << arrayAnimals[4]->getType() << "' ideas: " << arrayAnimals[4]->getBrain()->_ideas[0] << std::endl;
+    std::cout << "before copy = arrayAnimals[2] '" << arrayAnimals[2]->getType() << "' ideas: " << arrayAnimals[2]->getBrain()->_ideas[0] << std::endl;
    
-    (*arrayAnimals[3]) = (*arrayAnimals[5]);
+    (*arrayAnimals[2]) = (*arrayAnimals[4]);
 
-    std::cout << "after copy = arrayAnimals[5] '" << arrayAnimals[5]->getType() << "' ideas: " << arrayAnimals[5]->getBrain()->_ideas[0] << std::endl;
-    std::cout << "after copy = arrayAnimals[3] '" << arrayAnimals[3]->getType() << "' ideas: " << arrayAnimals[3]->getBrain()->_ideas[0] << std::endl;
+    std::cout << "after copy = arrayAnimals[4] '" << arrayAnimals[4]->getType() << "' ideas: " << arrayAnimals[4]->getBrain()->_ideas[0] << std::endl;
+    std::cout << "after copy = arrayAnimals[2] '" << arrayAnimals[2]->getType() << "' ideas: " << arrayAnimals[2]->getBrain()->_ideas[0] << std::endl;
     
     std::cout << "\n##### DESTRUCTOR #####" << std::endl;
     for (int i = 0; i < 100; i++)

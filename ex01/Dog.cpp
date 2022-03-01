@@ -36,6 +36,19 @@ Dog     &Dog::operator=(const Dog &src)
     return (*this);
 }
 
+Animal     &Dog::operator=(const Animal &src)
+{
+    if (this != &src)
+    {
+        this->Animal::_type = src.getType();
+        std::cout << "Assignment overload(Animal) for Animal::Dog class type " << this->Animal::_type << " called" << std::endl;
+        if (this->_brain != nullptr)
+            delete (this->_brain);
+        this->_brain = new Brain(*src.getBrain());
+    }
+    return (*this);
+}
+
 void    Dog::makeSound(void) const
 {
     std::cout << "Dog barks!!!!!" << std::endl;
