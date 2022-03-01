@@ -24,7 +24,7 @@ Cat     &Cat::operator=(const Cat &src)
     if (this != &src)
     {
         this->Animal::_type = src.Animal::_type;
-        std::cout << "Assignment overload for Cat class type " << this->Animal::_type << " called" << std::endl;
+        std::cout << "Assignment overload(Cat) for Cat class type " << this->Animal::_type << " called" << std::endl;
         if (this->_brain != nullptr)
             delete (this->_brain);
         //if (src._brain != nullptr)
@@ -33,6 +33,19 @@ Cat     &Cat::operator=(const Cat &src)
             //this->_brain = new Brain(*src._brain);
         else
             this->_brain = nullptr;
+    }
+    return (*this);
+}
+
+Animal     &Cat::operator=(const Animal &src)
+{
+    if (this != &src)
+    {
+        this->Animal::_type = src.getType();
+        std::cout << "Assignment overload(Animal) for Animal::Cat class type " << this->Animal::_type << " called" << std::endl;
+        if (this->_brain != nullptr)
+            delete (this->_brain);
+        this->_brain = new Brain(*src.getBrain());
     }
     return (*this);
 }

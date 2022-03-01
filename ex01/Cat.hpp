@@ -14,6 +14,7 @@ public:
     ~Cat(void);
 
     Cat     &operator=(const Cat &src);
+    Animal  &operator=(const Animal &src);
     void    makeSound(void) const;
     Brain   *getBrain(void) const;
     void    setIdea(const std::string idea);
