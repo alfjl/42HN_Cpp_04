@@ -1,11 +1,19 @@
 #pragma once
 
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class   IMateriaSource
+class   MateriaSource : public IMateriaSource
 {
+private:
+    AMateria    *_templates[4];
+
 public:
-    virtual ~IMateriaSource();
-    virtual void    learnMateria(AMateria*) = 0;
-    virtual AMateria*   createMateria(std::string const &type) = 0;
+    MateriaSource();
+    MateriaSource(const MateriaSource &other);
+    ~MateriaSource();
+
+    MateriaSource   &operator=(const MateriaSource &src);
+
+    void    learnMateria(AMateria *m);
+    AMateria*   createMateria(std::string const &type);
 };

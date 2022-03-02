@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Ice.hpp"
 
 
@@ -32,7 +33,7 @@ std::string const   &Ice::getType() const
 AMateria *Ice::clone(void) const
 {
     Ice *clone = new Ice(*this);
-    return (&clone);
+    return (clone);
 }
 
 void    Ice::use(ICharacter &target)

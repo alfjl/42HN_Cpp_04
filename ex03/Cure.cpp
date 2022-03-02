@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Cure.hpp"
 
 
@@ -32,7 +33,7 @@ std::string const   &Cure::getType() const
 AMateria *Cure::clone(void) const
 {
     Cure *clone = new Cure(*this);
-    return (&clone);
+    return (clone);
 }
 
 void    Cure::use(ICharacter &target)

@@ -1,5 +1,5 @@
+#include <iostream>
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
 AMateria::AMateria(void) : _type("AMateria")
 {
@@ -17,7 +17,7 @@ AMateria::AMateria(const AMateria &other)
     std::cout << "Copy constructor AMateria of type " << this->_type << " called" << std::endl;
 }
 
-AMateria::virtual ~AMateria(void)
+AMateria::~AMateria(void)
 {
     std::cout << "Virtual destructor AMateria of type " << this->_type << " called" << std::endl;
 }
@@ -34,10 +34,10 @@ std::string const   &AMateria::getType() const
     return (this->_type);
 }
 
-AMateria    *AMateria::clone(void) const
-{
-    return (nullptr);
-}
+//AMateria    *AMateria::clone(void) const
+//{
+//    return (nullptr);
+//}
 
 void        AMateria::use(ICharacter &target)
 {
