@@ -5,6 +5,8 @@ Character::Character(void) : _name("DEFAULT")
 {
     for (int i = 0; i < 4; i++)
         this->_inventory[i] = nullptr;
+    for (int i = 0; i < 1000; i++)
+        this->_mapOfLostStuff[i] = nullptr;
     std::cout << "Default constructor for Character class named " << this->_name << " called" << std::endl;
 }
 
@@ -12,6 +14,8 @@ Character::Character(const std::string name) : _name(name)
 {
     for (int i = 0; i < 4; i++)
         this->_inventory[i] = nullptr;
+    for (int i = 0; i < 1000; i++)
+        this->_mapOfLostStuff[i] = nullptr;
     std::cout << "Argument constructor for Character class named " << this->_name << " called" << std::endl;
 }
 
@@ -59,7 +63,7 @@ void    Character::equip(AMateria *m)
         if (this->_inventory[i] == nullptr)
         {
             this->_inventory[i] = m;
-            std::cout << this->_name << "equiped AMateria " << m->getType() << " on index " << i << std::endl;
+            std::cout << this->_name << " equiped AMateria '" << m->getType() << "' on index " << i << std::endl;
             return ;
         }
     }
@@ -67,8 +71,11 @@ void    Character::equip(AMateria *m)
 
 void    Character::unequip(int idx)
 {
-    if (idx < 4 && this->_inventory[idx] != nullptr)
+    if (idx >= 0 && idx < 4 && this->_inventory[idx] != nullptr)
+    {
         this->drop_to_floor(this->_inventory[idx]);
+        this->_inventory[idx] = nullptr;
+    }
 }
 
 void    Character::drop_to_floor(AMateria *m) // Future: should be full dynamic, and all Characters use the same 'Floor' to drop their stuff!
@@ -81,7 +88,7 @@ void    Character::drop_to_floor(AMateria *m) // Future: should be full dynamic,
         if (this->_mapOfLostStuff[i] == nullptr)
         {
             this->_mapOfLostStuff[i] = m;
-            std::cout << this->_name << "dropped AMateria " << m->getType() << " to the floor" << std::endl;
+            std::cout << this->_name << " dropped AMateria '" << m->getType() << "' to the floor" << std::endl;
             break ;
         }
     }
@@ -94,7 +101,7 @@ void    Character::drop_to_floor(AMateria *m) // Future: should be full dynamic,
 
 void    Character::use(int idx, ICharacter &target)
 {
-    if (idx < 4 && this->_inventory[idx] != nullptr)
+    if (idx >= 0 && idx < 4 && this->_inventory[idx] != nullptr)
         this->_inventory[idx]->use(target);        
 }
 
@@ -104,6 +111,7 @@ void    Character::empty_inventory(void)
     {
         if (this->_inventory[i] != nullptr)
         {
+            std::cout << "empty_inventory" << std::endl;
             delete (this->_inventory[i]);
             this->_inventory[i] = nullptr;
         }
@@ -117,6 +125,7 @@ void    Character::empty_mapOfLostStuff(void)
     {
         if (this->_mapOfLostStuff[i] != nullptr)
         {
+            std::cout << "empty_mapOfLostStuff" << std::endl;
             delete (this->_mapOfLostStuff[i]);
             this->_mapOfLostStuff[i] = nullptr;
         }

@@ -4,24 +4,24 @@
 
 Ice::Ice(void) : AMateria("ice")
 {
-    std::cout << "Default constructor Ice of type " << this->AMateria::_type << " called" << std::endl;
+    std::cout << "Default constructor Ice of type '" << this->AMateria::_type << "' called" << std::endl;
 }
 
 Ice::Ice(const Ice &other) : AMateria(other)
 {
     *this = other;
-    std::cout << "Copy constructor Ice of type " << this->AMateria::_type << " called" << std::endl;
+    std::cout << "Copy constructor Ice of type '" << this->AMateria::_type << "' called" << std::endl;
 }
 
 Ice::~Ice(void)
 {
-    std::cout << "Destructor Ice of type " << this->AMateria::_type << " called" << std::endl;
+    std::cout << "Destructor Ice of type '" << this->AMateria::_type << "' called" << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &src)
 {
-    this->AMateria::_type = src._type; // that's not needed, but what is?
-    std::cout << "Assignment overload for Ice of type " << this->AMateria::_type << " called" << std::endl;
+    AMateria::operator=(src);
+    std::cout << "Assignment overload for Ice of type '" << this->AMateria::_type << "' called" << std::endl;
     return (*this);
 }
 
