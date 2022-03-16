@@ -10,7 +10,7 @@ int main()
     const Animal    *i = new Dog();
     const Animal    *j = new Cat();
 
-    std::cout << "\n##### IN_CORRECT #####" << std::endl;
+    std::cout << "\n##### INCORRECT #####" << std::endl;
     const WrongAnimal    *wrong_meta = new WrongAnimal();
     const WrongAnimal    *k = new WrongCat();
 
@@ -21,12 +21,12 @@ int main()
     j->makeSound(); // will output the CAT sound!
     meta->makeSound(); // will output nothing
 
-    std::cout << "\n##### IN_CORRECT #####" << std::endl;
+    std::cout << "\n##### INCORRECT #####" << std::endl;
     std::cout << k->getType() << " " << std::endl;
     k->makeSound(); // will output the ANIMAL sound!
     wrong_meta->makeSound(); // will output the ANIMAL sound!
     
-    std::cout << "\n##### IN_CORRECT #####" << std::endl;
+    std::cout << "\n##### INCORRECT #####" << std::endl;
     delete (k);
     delete (wrong_meta);
 
