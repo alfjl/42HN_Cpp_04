@@ -20,8 +20,8 @@ int main()
     k->makeSound(); // will output the CAT sound!
     l->makeSound(); // will output the CAT sound!
 
-    delete (j);
     delete (i);
+    delete (j);
     delete (k);
     delete (l);
     
@@ -29,6 +29,7 @@ int main()
     AAnimal    *arrayAAnimals[100];
     for (int i = 0; i < 100; i++)
     {
+		std::cout << i << ".) ";
         if (i % 2 == 0)
             arrayAAnimals[i] = new Dog();
         else
@@ -46,13 +47,19 @@ int main()
     
     std::cout << "\n##### DESTRUCTOR #####" << std::endl;
     for (int i = 0; i < 100; i++)
+	{
+		std::cout << i << ".) ";
         delete (arrayAAnimals[i]);
+	}
 
     std::cout << "\n##### DEEP COPY PROOF CAT #####" << std::endl;
     Cat    *arrayCats[4];
     for (int i = 0; i < 4; i++)
-            arrayCats[i] = new Cat();
-    arrayCats[3]->setIdea("my idea #3");
+	{
+		std::cout << i << ".) ";
+        arrayCats[i] = new Cat();
+	}
+	arrayCats[3]->setIdea("my idea #3");
     std::cout << "before copy = arrayCats[3] '" << arrayCats[3]->getType() << "' ideas: " << arrayCats[3]->getBrain()->_ideas[0] << std::endl;
     std::cout << "before copy = arrayAAnimals[1] '" << arrayCats[1]->getType() << "' ideas: " << arrayCats[1]->getBrain()->_ideas[0] << std::endl;
     
@@ -61,7 +68,10 @@ int main()
     std::cout << "after copy = arrayCats[3] '" << arrayCats[3]->getType() << "' ideas: " << arrayCats[3]->getBrain()->_ideas[0] << std::endl;
     std::cout << "after copy = arrayCats[1] '" << arrayCats[1]->getType() << "' ideas: " << arrayCats[1]->getBrain()->_ideas[0] << std::endl;
     for (int i = 0; i < 4; i++)
+	{
+		std::cout << i << ".) ";
         delete (arrayCats[i]);
-    
+	}
+
     return (0);
 }
