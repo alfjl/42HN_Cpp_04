@@ -9,6 +9,7 @@ Dog::Dog(void) : Animal("Dog")
 
 Dog::Dog(const Dog &other) : Animal(other)
 {
+	this->_brain = nullptr;
     *this = other;
     std::cout << "Copy constructor for Dog class called" << std::endl;
 }
@@ -26,10 +27,8 @@ Dog     &Dog::operator=(const Dog &src)
         Animal::_type = src.Animal::_type;
         std::cout << "Assignment overload for Dog class type " << this->Animal::_type << " called" << std::endl;
         delete (this->_brain);
-        //if (src._brain != nullptr)
         if (src.getBrain() != nullptr)
             this->_brain = new Brain(*src.getBrain());
-            //this->_brain = new Brain(*src._brain);
         else
             this->_brain = nullptr;
     }
